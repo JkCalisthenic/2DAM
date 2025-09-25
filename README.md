@@ -31,12 +31,14 @@ Git: Pull
 ### 📋 Recomendaciones para mayor eficiencia
 Recomindo el uso de atajos rápidos de teclado en Obsidian para no usar constantemente el buscador.
 
-1. Abrir la configuración u opciones en la parte de abajo a la izquierda
-2. En la zona izquierda, primera sección, aparecerá "Atajos de teclado"
-3. Buscar "git", con eso saldrán todos los comandos anteriores dichos
+1. Abre **Configuración** (icono de engranaje en la esquina inferior izquierda).
+2. En la barra lateral, entra en **Atajos de teclado**.
+3. Escribe **git** en la barra de búsqueda para encontrar rápidamente todos los comandos mencionados.
 
-#### Combinaciones Recomendadas
-- Git: commit all changues --> Ctrl + Shift + C
-- Git: Push --> Ctrl + Shift + P
-- Git: Pull --> Ctrl + Alt Izq + P
+#### ⌨️ Combinaciones Recomendadas
+| Acción                  | Atajo recomendado  |
+| ----------------------- | ------------------ |
+| Git: Commit all changes | `Ctrl + Shift + C` |
+| Git: Push               | `Ctrl + Shift + P` |
+| Git: Pull               | `Ctrl + Alt + P`   |
 
