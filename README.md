@@ -1,11 +1,27 @@
-# README
+# 📚 Apuntes 2DAM
 
-Apuntes 2DAM, repositorio linkeado con Obsidian.
+Repositorio de apuntes para el ciclo **2º DAM**, sincronizado con **Obsidian**.
 
-# COMANDOS DE GIT
-## Subir Cambios
-1. git: commit all changues --> Recoge todos los archivos con cambios recientes
-2. git: push --> Sube los cambios del commit a github
+## ⚡ Comandos de Git
 
-## Recoger cambios de github
-1. git: pull --> Guarda en Obsidian los últimos cambios subidos a github
+### 🔼 Subir cambios
+
+#### 1. Commit de todos los cambios
+	Recoge todos los archivos con cambios recientes.
+``` git
+git commit -a -m "Mensaje del commit"
+```
+
+#### 2. Push a GitHub
+	Sube los commits al repositorio remoto.
+``` git
+git push
+```
+
+### ⬇️ Descargar cambios de GitHub
+####     Pull de los últimos cambios
+	Actualiza el repositorio local con los últimos cambios de GitHub, 
+	reflejándolos en Obsidian.
+``` git
+git pull
+```
