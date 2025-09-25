@@ -139,6 +139,43 @@ Esto hace el código más conciso y legible.
 |Condición por defecto|`else -> println("Otro")`|
 |Comprobar tipo|`is String -> println("Es texto")`|
 ## Operadores y constructos de rangos y colecciones
+
+En Kotlin, existen varios **operadores y constructos** que permiten **comprobar pertenencia, definir rangos de valores y trabajar con colecciones de manera segura**.
+
+``` Kotlin
+// 1️⃣ in y !in con if
+val numero = 7
+if (numero in 1..5) println("Número entre 1 y 5")
+if (numero !in 1..5) println("Número fuera del rango 1 a 5")
+
+// 2️⃣ .. (rango inclusivo)
+if (3 in 1..5) println("3 está en el rango de 1 a 5")
+
+// 3️⃣ until (excluye último)
+if (5 !in 0 until 5) println("5 no está en el rango 0 until 5") // 0..4
+
+// 4️⃣ downTo (decremento)
+if (3 in 5 downTo 1) println("3 está en el rango 5 downTo 1")
+
+// 5️⃣ step (salto)
+if (4 in 0..10 step 2) println("4 está en el rango 0..10 con step 2") 
+// 0,2,4,6,8,10
+
+// 6️⃣ in con colecciones
+val vocales = listOf("a", "e", "i", "o", "u")
+val letra = "e"
+
+if (letra in vocales) println("$letra es una vocal")
+if ("x" !in vocales) println("x no es una vocal")
+
+// 7️⃣ Uso de when con in y !in
+when (numero) {
+	in 1..5 -> println("Número entre 1 y 5")
+    in 6..10 -> println("Número entre 6 y 10")
+    !in 1..10 -> println("Número fuera de 1 a 10")
+}
+```
+
 |Operador / Constructo|Uso principal|
 |---|---|
 |`in` / `!in`|Comprobar pertenencia en rango o colección|
@@ -148,56 +185,3 @@ Esto hace el código más conciso y legible.
 |`step`|Definir salto en rangos|
 |`indices`|Iterar sobre índices de listas/arrays|
 |`lastIndex`|Obtener el último índice de una colección|
-En Kotlin, existen varios **operadores y constructos** que permiten **comprobar pertenencia, definir rangos de valores y trabajar con colecciones de manera segura**.
-
-``` Kotlin
-val numero = 7
-    if (numero in 1..5) println("Número entre 1 y 5")
-    if (numero !in 1..5) println("Número fuera del rango 1 a 5")
-
-    // 2️⃣ Uso de .. (rango inclusivo) en for
-    println("\nRango inclusivo con ..")
-    for (i in 1..5) print("$i ") // 1 2 3 4 5
-    println()
-
-    // 3️⃣ Uso de until (excluye último)
-    println("\nRango con until")
-    for (i in 0 until 5) print("$i ") // 0 1 2 3 4
-    println()
-
-    // 4️⃣ Uso de downTo (decremento)
-    println("\nRango decreciente con downTo")
-    for (i in 5 downTo 1) print("$i ") // 5 4 3 2 1
-    println()
-
-    // 5️⃣ Uso de step (salto)
-    println("\nRango con step")
-    for (i in 1..10 step 2) print("$i ") // 1 3 5 7 9
-    println()
-
-    // 6️⃣ Iterar sobre colecciones usando in
-    val frutas = listOf("Manzana", "Banana", "Cereza")
-    println("\nRecorriendo lista con in")
-    for (fruta in frutas) println(fruta)
-
-    // 7️⃣ Iterar usando indices
-    println("\nRecorriendo lista usando indices")
-    for (i in frutas.indices) {
-        println("Elemento $i: ${frutas[i]}")
-    }
-
-    // 8️⃣ Usando lastIndex
-    println("\nRecorriendo lista usando lastIndex")
-    for (i in 0..frutas.lastIndex) {
-        println("Elemento $i: ${frutas[i]}")
-    }
-
-    // 9️⃣ Uso de in en when
-    val letra = "e"
-    val vocales = listOf("a", "e", "i", "o", "u")
-
-    when (letra) {
-        in vocales -> println("\nEs una vocal")
-        !in vocales -> println("\nNo es una vocal")
-    }
-```
