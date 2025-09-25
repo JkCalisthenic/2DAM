@@ -5,6 +5,7 @@ Repositorio de apuntes para el ciclo **2º DAM**, sincronizado con **Obsidian**.
 ## ⚡ Comandos de Git
 
 > [!NOTE] Donde ejecutar los comandos de git
+> 
 > Para usar estos comandos debes abrir el buscador de Obsidian usando el atajo de teclado Ctrl+P
 ### 🔼 Subir cambios
 
