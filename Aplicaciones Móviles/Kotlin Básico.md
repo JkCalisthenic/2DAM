@@ -176,14 +176,16 @@ when (numero) {
 }
 ```
 
-|Operador / Constructo|Uso principal|
-|---|---|
-|`in` / `!in`|Comprobar pertenencia en rango o colección|
-|`..`|Crear rangos inclusivos|
-|`until`|Crear rangos excluyendo el último valor|
-|`downTo`|Rangos decrecientes|
-|`step`|Definir salto en rangos|
-|`indices`|Iterar sobre índices de listas/arrays|
-|`lastIndex`|Obtener el último índice de una colección|
+| Operador / Constructo | Uso principal                              |
+| --------------------- | ------------------------------------------ |
+| `in` / `!in`          | Comprobar pertenencia en rango o colección |
+| `..`                  | Crear rangos inclusivos                    |
+| `until`               | Crear rangos excluyendo el último valor    |
+| `downTo`              | Rangos decrecientes                        |
+| `step`                | Definir salto en rangos                    |
+| `indices`             | Iterar sobre índices de listas/arrays      |
+| `lastIndex`           | Obtener el último índice de una colección  |
 
-test
+
+
+testeo fer
