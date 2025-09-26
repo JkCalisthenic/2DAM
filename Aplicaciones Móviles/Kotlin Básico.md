@@ -185,3 +185,5 @@ when (numero) {
 |`step`|Definir salto en rangos|
 |`indices`|Iterar sobre índices de listas/arrays|
 |`lastIndex`|Obtener el último índice de una colección|
+
+test
