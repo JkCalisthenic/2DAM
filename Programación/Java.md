@@ -59,3 +59,100 @@ public class LeerArchivo {
 ```
 
 
+# Comparadores
+### *Comparator:*
+
+Se utiliza para ordenar clases según unos atributos establecidos.
+
+Ejemplo:
+
+***Clase Persona***
+``` java
+import java.util.*;
+
+public class Persona {
+    String nombre;
+    int edad;
+
+    Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}
+```
+
+***Clase ComparadorPorEdad***
+``` java
+import java.util.*;
+
+ public class ComparadorPorEdad implements Comparator<Persona> {
+    @Override
+    public int compare(Persona p1, Persona p2) {
+        return p1.edad - p2.edad;
+    }
+}
+```
+
+***Clase Principal***
+``` java
+import java.util.*;
+
+public class EjemploComparator {
+    public static void main(String[] args) {
+        List<Persona> lista = Arrays.asList(
+            new Persona("Ana", 25),
+            new Persona("Luis", 30),
+            new Persona("Maria", 20)
+        );
+
+        Collections.sort(lista, new ComparadorPorEdad());
+
+        for (Persona p : lista) {
+            System.out.println(p.nombre + " - " + p.edad);
+        }
+    }
+}
+```
+
+
+### *Comparable*
+
+Sirve para **definir el orden natural de los objetos de una clase**, de manera que puedan ser **ordenados automáticamente** con `Collections.sort()` o `List.sort()`.
+
+Ejemplo:
+
+``` java
+import java.util.*;
+
+class Persona implements Comparable<Persona> {
+    String nombre;
+    int edad;
+
+    Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    @Override
+    public int compareTo(Persona otra) {
+        return this.edad - otra.edad;
+    }
+}
+
+public class EjemploComparable {
+    public static void main(String[] args) {
+        List<Persona> lista = Arrays.asList(
+            new Persona("Ana", 25),
+            new Persona("Luis", 30),
+            new Persona("Maria", 20)
+        );
+
+        Collections.sort(lista);
+
+        for (Persona p : lista) {
+            System.out.println(p.nombre + " - " + p.edad);
+        }
+    }
+}
+
+```
