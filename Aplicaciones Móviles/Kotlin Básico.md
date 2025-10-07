@@ -185,3 +185,55 @@ when (numero) {
 | `step`                | Definir salto en rangos                    |
 | `indices`             | Iterar sobre índices de listas/arrays      |
 | `lastIndex`           | Obtener el último índice de una colección  |
+## Listas
+### List (inmutable)
+- Es **solo de lectura**: no puedes agregar, eliminar ni cambiar elementos después de crearla.
+- Ideal para listas que no deben cambiar.
+
+```kotlin
+val numeros = listOf(1, 2, 3, 4)
+println(numeros[0]) // 1
+// numeros.add(5) ❌ Error: no se puede modificar
+```
+
+### MutableList
+- Es **mutable**, puedes agregar, eliminar y modificar elementos libremente.
+
+```kotlin
+val numeros = mutableListOf(1, 2, 3)
+numeros.add(4)      // ✅ Agregar
+numeros.remove(2)   // ✅ Eliminar
+numeros[0] = 10     // ✅ Modificar
+println(numeros)    // [10, 3, 4]
+
+```
+
+### ArrayList
+- Crea una **lista basada en ArrayList de Java**.  
+Es prácticamente igual que mutableListOf, pero garantiza la implementación concreta.
+
+```kotlin
+val lista = arrayListOf("a", "b", "c")
+lista.add("d")
+println(lista) // [a, b, c, d]
+
+```
+
+### EmptyList y EmptyMutableList
+- Crean listas vacías sin elementos.
+
+```kotlin
+val listaVacia = emptyList<String>()
+val listaMutableVacia = mutableListOf<Int>()
+
+```
+
+### ListOfNotNull 
+- Crea una lista que **omite los valores nulos** automáticamente.
+
+```kotlin
+val lista = listOfNotNull(1, null, 3, null, 5)
+println(lista) // [1, 3, 5]
+
+```
+
