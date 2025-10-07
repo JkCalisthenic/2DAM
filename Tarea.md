@@ -1,2 +1,2 @@
 
-Inglés: pagina 6-7: 6-9
+Inglés: pagina 12: Que ideas añadirías a tu Blog Post
