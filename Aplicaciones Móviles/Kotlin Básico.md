@@ -1,7 +1,8 @@
 - ---
 - #LenguajeDeProgramación
 -  ---
-## Creación de variables
+## Básicos
+### Creación de variables
 Existen dos maneras para rear una variable, pueden ser las siguientes:
 - **Var:** Creación de una variable que puede cambiar su valor en el resto del código.
 - **Val:** Creación de una variable que su valor no va a cambiar nunca, es una variable constante.
@@ -32,7 +33,7 @@ El símbolo ? justo antes del signo = significa que puede tener tanto el valor n
 var variable: Int? = 4
 ```
 
-## Mostrar cosas en la consola
+### Mostrar cosas en la consola
 Para mostrar cosas por consola es muy parecido con python:
 ``` kotlin
 var num1: Int? = 20
@@ -336,7 +337,8 @@ class Profesor(nombre: String, val materia: String) : Persona(nombre) {
 }
 ```
 
-### Clase public
+### Tipos de clases
+#### Clase public
 - En Kotlin, todas las clases son public por defecto.
 - Esto significa que pueden ser accedidas desde cualquier parte del proyecto.
 - No necesitas escribir public explícitamente, pero puedes hacerlo si quieres ser más claro.
@@ -350,7 +352,7 @@ fun main() {
 }
 ```
 
-### Clases sealed
+#### Clases sealed
 - Una clase sealed permite controlar todas las subclases posibles.
 - Es útil cuando quieres que todas las variaciones de una clase estén en el mismo archivo.
 - Muy usado en when para cubrir todos los casos sin necesidad de else.
