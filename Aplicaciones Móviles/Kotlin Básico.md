@@ -76,7 +76,6 @@ numero?.let {
         println("Soy un número negativo")
     }
 } ?: println("Soy un número nulo")
-
 ```
 **Explicación:** 
 - El operador **safe call** **`?.`** asegura que el bloque `let` se ejecute solo si `numero` **no es nulo**.
@@ -205,7 +204,6 @@ numeros.add(4)      // ✅ Agregar
 numeros.remove(2)   // ✅ Eliminar
 numeros[0] = 10     // ✅ Modificar
 println(numeros)    // [10, 3, 4]
-
 ```
 
 ### ArrayList
@@ -216,7 +214,6 @@ Es prácticamente igual que mutableListOf, pero garantiza la implementación con
 val lista = arrayListOf("a", "b", "c")
 lista.add("d")
 println(lista) // [a, b, c, d]
-
 ```
 
 ### EmptyList y EmptyMutableList
@@ -225,7 +222,6 @@ println(lista) // [a, b, c, d]
 ```kotlin
 val listaVacia = emptyList<String>()
 val listaMutableVacia = mutableListOf<Int>()
-
 ```
 
 ### ListOfNotNull 
@@ -234,7 +230,6 @@ val listaMutableVacia = mutableListOf<Int>()
 ```kotlin
 val lista = listOfNotNull(1, null, 3, null, 5)
 println(lista) // [1, 3, 5]
-
 ```
 
 ## Clases
@@ -291,7 +286,6 @@ open class Persona(
         println("Hola, mi nombre es $nombre")
     }
 }
-
 ```
 #### Clase derivada o hija
 Se crea usando `:` seguido del nombre de la clase padre.
@@ -308,7 +302,6 @@ class Estudiante(
         println("$nombre está estudiando $carrera")
     }
 }
-
 ```
 
 #### Sobrescribir métodos
@@ -329,7 +322,6 @@ class Profesor(nombre: String, val materia: String) : Persona(nombre) {
         println("Hola, soy $nombre y enseño $materia")
     }
 }
-
 ```
 
 #### Uso de super
@@ -342,7 +334,6 @@ class Profesor(nombre: String, val materia: String) : Persona(nombre) {
         println("Mi materia es $materia")
     }
 }
-
 ```
 
 ### Clase public
@@ -357,7 +348,6 @@ fun main() {
     val miCoche = Vehiculo("Toyota", "Corolla")
     println(miCoche.marca)  // Toyota
 }
-
 ```
 
 ### Clases sealed
@@ -384,6 +374,5 @@ fun main() {
     mostrarResultado(res1)  // Éxito: Todo salió bien
     mostrarResultado(res2)  // Error: 404
 }
-
 ```
 
