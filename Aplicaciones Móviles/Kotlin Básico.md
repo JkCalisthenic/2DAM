@@ -234,6 +234,7 @@ println(lista) // [1, 3, 5]
 ```
 
 ## Clases
+### Clases normales
 Una clase en kotlin se define con sus atributos:
 ```kotlin
 // Definición de la clase Persona
@@ -271,6 +272,22 @@ fun main() {
 }
 ```
 
+### Data class
+Una data class es una clase especial que se usa principalmente para almacenar datos.
+Kotlin genera automáticamente algunos métodos útiles para estas clases:
+- toString() → Muestra los atributos de forma clara.
+- equals() → Compara objetos por sus atributos, no por referencia.
+- hashCode() → Para usar en colecciones como HashMap.
+- copy() → Permite crear copias modificando algunos atributos.
+- componentN() → Para desestructuración (val (a, b) = objeto).
+
+```kotlin
+data class Persona(
+    val nombre: String,
+    val edad: Int,
+    val ciudad: String
+)
+```
 
 ### Herencia
 La herencia permite que una clase herede propiedades y métodos de otra clase, evitando repetir código.
@@ -336,6 +353,63 @@ class Profesor(nombre: String, val materia: String) : Persona(nombre) {
     }
 }
 ```
+
+### Interfaces
+Una interface es como un contrato que define métodos y propiedades que una clase debe implementar.
+- No se puede instanciar directamente.
+- Puede contener métodos con implementación o solo la firma.
+- Una clase puede implementar múltiples interfaces, algo que no es posible con la herencia de clases normales.
+
+#### Definición de una interfaz
+```kotlin
+interface Trabajador {
+    val puesto: String      // Propiedad abstracta
+
+    fun trabajar()          // Método abstracto
+    fun descansar() {       // Método con implementación
+        println("Estoy descansando")
+    }
+}
+```
+
+#### Clase que implementa la interface
+```kotlin
+class Mecanico(val nombre: String) : Trabajador {
+    override val puesto: String = "Mecánico"
+
+    // Implementación obligatoria del método abstracto
+    override fun trabajar() {
+        println("$nombre está reparando autos")
+    }
+}
+```
+
+#### Uso de la interface
+```kotlin
+fun main() {
+    val mecanico1 = Mecanico("Luis")
+    mecanico1.trabajar()   // Luis está reparando autos
+    mecanico1.descansar()  // Estoy descansando
+    println(mecanico1.puesto) // Mecánico
+}
+```
+
+#### Puntos importantes
+Una interface puede contener propiedades y métodos, pero los métodos abstractos deben implementarse en la clase.
+Una clase puede implementar varias interfaces, separadas por comas:
+```kotlin
+interface Conductor {
+    fun conducir()
+}
+
+class MecanicoConductor(val nombre: String) : Trabajador, Conductor {
+    override val puesto = "Mecánico-Conductor"
+    
+    override fun trabajar() { println("$nombre está trabajando") }
+    override fun conducir() { println("$nombre está conduciendo") }
+}
+```
+Interfaces son útiles cuando quieres definir comportamientos comunes que pueden aplicarse a diferentes clases sin usar herencia.
 
 ### Tipos de clases
 #### Clase public
