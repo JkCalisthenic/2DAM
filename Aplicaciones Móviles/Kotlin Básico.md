@@ -237,3 +237,153 @@ println(lista) // [1, 3, 5]
 
 ```
 
+## Clases
+Una clase en kotlin se define con sus atributos:
+```kotlin
+// Definición de la clase Persona
+class Persona(
+    var nombre: String,    // Atributo 1
+    var edad: Int,         // Atributo 2
+    var ciudad: String     // Atributo 3
+) {
+    // Función para mostrar información de la persona
+    fun mostrarInfo() {
+        println("Nombre: $nombre, Edad: $edad, Ciudad: $ciudad")
+    }
+}
+```
+
+En este caso hemos creado la clase Persona, la cual tiene nombre, edad y ciudad.
+Si quisiéramos utilizar y acceder a la información de la clase:
+```kotlin
+fun main() {
+    val persona1 = Persona("Ana", 25, "Madrid")
+    persona1.mostrarInfo()
+}
+```
+Primero crearíamos una variable donde guardamos a la Persona pasándole los parámetros desus atributos.
+Y después podemos acceder a sus métodos mucho más fácil que en java:
+
+```kotlin
+fun main() {
+    val persona1 = Persona("Ana", 25, "Madrid")
+    persona1.mostrarInfo()
+    
+    println(persona1.nombre)
+    println(persona1.edad)
+    println(persona1.ciudad)
+}
+```
+
+
+### Herencia
+La herencia permite que una clase herede propiedades y métodos de otra clase, evitando repetir código.
+#### Clase base o padre
+Para permitir que otra clase herede de ella, la clase debe marcarse con la palabra clave open.
+Por defecto, las clases en Kotlin son final (no se pueden heredar).
+
+```kotlin
+open class Persona(
+    val nombre: String,
+    val edad: Int
+) {
+    fun saludar() {
+        println("Hola, mi nombre es $nombre")
+    }
+}
+
+```
+#### Clase derivada o hija
+Se crea usando `:` seguido del nombre de la clase padre.
+Debes llamar al constructor del padre si tiene parámetros.
+
+```kotlin
+class Estudiante(
+    nombre: String,
+    edad: Int,
+    val carrera: String
+) : Persona(nombre, edad) {   // Hereda de Persona
+
+    fun estudiar() {
+        println("$nombre está estudiando $carrera")
+    }
+}
+
+```
+
+#### Sobrescribir métodos
+Para permitir que un método sea sobrescrito, la función del padre debe ser open.
+En la clase hija se usa `override` para modificarlo.
+
+```kotlin
+open class Persona(
+    val nombre: String
+) {
+    open fun presentarse() {
+        println("Hola, soy $nombre")
+    }
+}
+
+class Profesor(nombre: String, val materia: String) : Persona(nombre) {
+    override fun presentarse() {
+        println("Hola, soy $nombre y enseño $materia")
+    }
+}
+
+```
+
+#### Uso de super
+Dentro de la clase hija, super se usa para llamar a métodos de la clase padre.
+
+```kotlin
+class Profesor(nombre: String, val materia: String) : Persona(nombre) {
+    override fun presentarse() {
+        super.presentarse()  // Llama al método de Persona
+        println("Mi materia es $materia")
+    }
+}
+
+```
+
+### Clase public
+- En Kotlin, todas las clases son public por defecto.
+- Esto significa que pueden ser accedidas desde cualquier parte del proyecto.
+- No necesitas escribir public explícitamente, pero puedes hacerlo si quieres ser más claro.
+
+```kotlin
+public class Vehiculo(val marca: String, val modelo: String)
+
+fun main() {
+    val miCoche = Vehiculo("Toyota", "Corolla")
+    println(miCoche.marca)  // Toyota
+}
+
+```
+
+### Clases sealed
+- Una clase sealed permite controlar todas las subclases posibles.
+- Es útil cuando quieres que todas las variaciones de una clase estén en el mismo archivo.
+- Muy usado en when para cubrir todos los casos sin necesidad de else.
+
+```kotlin
+sealed class Resultado
+class Exito(val mensaje: String) : Resultado()
+class Error(val codigo: Int) : Resultado()
+
+fun mostrarResultado(res: Resultado) {
+    when (res) {
+        is Exito -> println("Éxito: ${res.mensaje}")
+        is Error -> println("Error: ${res.codigo}")
+    }
+}
+
+fun main() {
+    val res1: Resultado = Exito("Todo salió bien")
+    val res2: Resultado = Error(404)
+
+    mostrarResultado(res1)  // Éxito: Todo salió bien
+    mostrarResultado(res2)  // Error: 404
+}
+
+```
+
