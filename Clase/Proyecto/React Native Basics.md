@@ -136,3 +136,4 @@ export default function App() {
 - navigation.navigate('Detalle) -> cambia a la pantalla Detalle.
 - Cada pantalla recibe navigation como prop automáticamente.
 - Stack = aplicar pantallas -> "volver" elimina la pantalla de arriba.
+
