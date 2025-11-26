@@ -1,3 +1,3 @@
 - --
-- #IDE
+- Tags: #IDE #AplicacionesMoviles #Clase
 -  ---

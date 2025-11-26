@@ -1,8 +1,7 @@
-- ---
-- #LenguajeDeProgramación
+-- ---
+- Tags: #LenguajeDeProgramación #AplicacionesMoviles #Kotlin #Clase
 -  ---
-## Básicos
-### Creación de variables
+## Básicos Creación de variables
 Existen dos maneras para rear una variable, pueden ser las siguientes:
 - **Var:** Creación de una variable que puede cambiar su valor en el resto del código.
 - **Val:** Creación de una variable que su valor no va a cambiar nunca, es una variable constante.
@@ -451,4 +450,8 @@ fun main() {
     mostrarResultado(res2)  // Error: 404
 }
 ```
+
+
+
+
 
