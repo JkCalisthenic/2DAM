@@ -1,3 +1,0 @@
-- --
-- Tags: #LenguajeDeProgramación #PSP #Python #CLase
-- --
