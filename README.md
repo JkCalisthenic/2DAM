@@ -42,3 +42,4 @@ Recomindo el uso de atajos rápidos de teclado en Obsidian para no usar constant
 | Git: Push               | `Ctrl + Shift + P` |
 | Git: Pull               | `Ctrl + Alt + P`   |
 
+
